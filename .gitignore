@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+./staticfiles/
+django_markdownx_test.iml
+db.sqlite3
