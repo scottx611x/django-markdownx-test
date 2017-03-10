@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block content %}
+
+    {% for object in object_list %}
+       <div class="row">
+        <div class="center-block col-md-4" style="float: none; text-align:
+        left; width: 75%;">
+            <p>
+              <h2>Slug</h2>
+              <a href="/{{ object.slug }}"> {{ object.slug }}</a>
+            </p>
+            {{object.markdownx_field1|markdown}}
+            {{object.markdownx_field2|markdown}}
+            {{object.markdownx_field3|markdown}}
+        </div>
+      </div>
+      <hr>
+    {% endfor %}
+
+{% endblock %}

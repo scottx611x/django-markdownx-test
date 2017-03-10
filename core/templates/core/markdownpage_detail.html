@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block content %}
+
+   <div class="row">
+    <div class="center-block col-md-4" style="float: none; text-align:
+    left; width: 75%;">
+        <p>
+          <h2>Slug:</h2>
+          {{ object.slug }}
+        </p>
+        {{object.markdownx_field1|markdown}}
+        {{object.markdownx_field2|markdown}}
+        {{object.markdownx_field3|markdown}}
+    </div>
+  </div>
+
+{% endblock %}
