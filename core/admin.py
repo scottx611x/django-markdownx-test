@@ -4,7 +4,7 @@ from django.contrib import admin
 from markdownx.widgets import AdminMarkdownxWidget
 from markdownx.models import MarkdownxField
 
-from .models import MyModel
+from .models import MarkdownPage
 
 
 class MyModelAdmin(admin.ModelAdmin):
@@ -12,4 +12,4 @@ class MyModelAdmin(admin.ModelAdmin):
         MarkdownxField: {'widget': AdminMarkdownxWidget}
     }
 
-admin.site.register(MyModel, MyModelAdmin)
+admin.site.register(MarkdownPage, MyModelAdmin)
