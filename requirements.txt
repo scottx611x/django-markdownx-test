@@ -1,2 +1,4 @@
-Django
+Django==1.8.17
 django-markdownx
+markdown2
+django-markdown-deux
