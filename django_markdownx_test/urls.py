@@ -18,11 +18,15 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 
-from core.views import IndexTemplateView, TestCreateView
+from core.views import IndexTemplateView, CustomCreateView, PagesList, \
+    PagesDetail
 
 urlpatterns = [
     url(r'^$', IndexTemplateView.as_view()),
-    url(r'^create-view/$', TestCreateView.as_view(), name='create_view'),
+    url(r'^create-view/$', CustomCreateView.as_view(), name='create_view'),
     url(r'^markdownx/', include('markdownx.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'pages/', PagesList.as_view()),
+    url(r'^(?P<slug>[-\w]+)/$', PagesDetail.as_view(),
+        name='markdownpage-detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
